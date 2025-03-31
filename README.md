@@ -159,7 +159,41 @@ Measures the agreement between predicted and actual labels beyond chance.
 
 ✅ Precision-Recall Curve
 Visualized for each fold, including the AUC score
-      <pre> +------------------+ | Raw Images | +------------------+ | v----------------v +-------------------------------+ | Feature Extraction | | - InceptionV3 (Deep features) | | - RGB / HSV / LAB Stats | +-------------------------------+ | v----------------v +-------------------------------+ | Feature Concatenation | +-------------------------------+ | v----------------v +-------------------------------+ | PCA (Dim. Reduction) | +-------------------------------+ | v----------------v +-------------------------------+ | LightGBM Classifier | | (5-Fold Stratified CV) | +-------------------------------+ | v----------------v +-------------------------------+ | Evaluation Metrics | | - Accuracy | | - MAE, Kappa | | - Confusion Matrix | | - PR Curve | +-------------------------------+ </pre>
++------------------+
+|    Raw Images    |
++------------------+
+         |
+         v
++-------------------------------+
+|     Feature Extraction        |
+| - InceptionV3 (Deep features) |
+| - RGB / HSV / LAB Stats       |
++-------------------------------+
+         |
+         v
++-------------------------------+
+|    Feature Concatenation      |
++-------------------------------+
+         |
+         v
++-------------------------------+
+|    PCA (Dim. Reduction)       |
++-------------------------------+
+         |
+         v
++-------------------------------+
+|     LightGBM Classifier       |
+|   (5-Fold Stratified CV)      |
++-------------------------------+
+         |
+         v
++-------------------------------+
+|      Evaluation Metrics       |
+| - Accuracy                    |
+| - MAE, Kappa                  |
+| - Confusion Matrix            |
+| - PR Curve                    |
++-------------------------------+
 
 
 
